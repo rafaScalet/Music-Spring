@@ -23,4 +23,13 @@ public class MusicService {
 		return this.repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Music not found"));
 	}
 
+	public void deleteMusic (int id) {
+		if (repository.existsById(id)) {
+			repository.deleteById(id);
+			return;
+		}
+
+		throw new EntityNotFoundException("Music not found");
+	}
+
 }

@@ -3,6 +3,7 @@ package com.music.music_registration.resources;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -22,6 +23,11 @@ public class MusicController {
 	@GetMapping("music/{id}")
 	public Music getMusicById (@PathVariable int id) {
 		return this.service.getMusicById(id);
+	}
+
+	@DeleteMapping("music/{id}")
+	public void deleteMusic (@PathVariable int id) {
+		this.service.deleteMusic(id);
 	}
 
 }
