@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.music.music_registration.entities.Music;
 import com.music.music_registration.repositories.MusicRepository;
 
+import jakarta.persistence.EntityNotFoundException;
+
 
 public class MusicService {
 
@@ -15,6 +17,10 @@ public class MusicService {
 
 	public List<Music> getMusics () {
 		return this.repository.findAll();
+	}
+
+	public Music getMusicById (int id) {
+		return this.repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Music not found"));
 	}
 
 }
