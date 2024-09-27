@@ -36,4 +36,16 @@ public class MusicService {
 		return this.repository.save(music);
 	}
 
+	public void updateMusic (int id, Music music) {
+		Music temp = repository.getReferenceById(id);
+
+		temp.setAlbum(music.getAlbum());
+		temp.setComposer(music.getComposer());
+		temp.setDuration(music.getDuration());
+		temp.setGenre(music.getGenre());
+		temp.setName(music.getName());
+
+		repository.save(temp);
+	}
+
 }
