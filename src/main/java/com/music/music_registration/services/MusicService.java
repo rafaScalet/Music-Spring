@@ -32,4 +32,8 @@ public class MusicService {
 		throw new EntityNotFoundException("Music not found");
 	}
 
+	public Music saveMusic (Music music) {
+		return this.repository.save(music);
+	}
+
 }
