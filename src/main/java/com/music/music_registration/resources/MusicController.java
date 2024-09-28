@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.music.music_registration.services.MusicService;
 import com.music.music_registration.entities.Music;
 
+@RestController
 public class MusicController {
 
 	@Autowired
